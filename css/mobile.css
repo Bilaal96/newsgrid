@@ -1,0 +1,84 @@
+/* --------------------- Shared Styles - Tablet & Mobile -------------------- */
+/* Navigation */
+/* Remove Social Icons */
+#main-nav .social {
+    display: none;
+}
+
+/* Move Navigation Menu to Own Row */
+#main-nav .container {
+    grid-template-columns: 1fr;
+    grid-gap: 1.2rem;
+}
+
+/* Center Logo & Nav Menu */
+#main-nav .logo,
+#main-nav ul {
+    justify-self: center;
+}
+
+/* Shrink Menu Link Size */
+#main-nav ul li a {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+/* Set .articles-container to 2 Columns */
+#home-articles .articles-container {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Set unique .card's to be same as others */
+#home-articles .articles-container > *:first-child,
+#home-articles .articles-container > *:last-child {
+    grid-template-columns: 1fr;
+
+    /* Set Span to Default (1) */
+    grid-column: 1;
+}
+
+/* ------------------------------- Mobile Only ------------------------------ */
+@media (max-width: 600px) {
+
+    /* Stack Grid Items */
+    #showcase .showcase-container,
+    #home-articles .articles-container,
+    .page-container,
+    #main-footer .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reset column span on .footnote */
+    #main-footer .footer-container .footnote {
+        grid-column: 1;
+    }
+
+    /* Add Border Between Footer Grid-Items */
+    #main-footer .footer-container > *:first-child,
+    #main-footer .footer-container > *:nth-child(2) {
+        border-bottom: 1px dotted #444;
+        padding-bottom: 1rem;
+    }
+
+    /* Reset row span on main-content/article section */
+    .page-container > *:first-child {
+        grid-row: 1;
+    }
+
+    /* Stack .meta items */
+    #article .meta {
+        flex-direction: column;
+    }
+
+    /* Reduce font-size of Article Heading */
+    .l-heading {
+        font-size: 2rem;
+    }
+}
+
+/* iPhone 5/SE */
+@media (max-width: 320px) {
+    #showcase .showcase-container {
+        height: 90vh;
+    }
+}
